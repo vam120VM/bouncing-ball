@@ -1,10 +1,17 @@
 
-//variablerne der får firkanten til at skrumpe 
-int a =2;
-int b =997;
+//variablerne der får cirklen til at bevæge sig  
+float ballXspeed=5;
+float ballYspeed=5;
+float x= 200;
+float y= 700;
+
+
+
+
 
 void setup(){
-size (1000, 1000);
+size (800, 800);
+frameRate(60); 
 }
 
 
@@ -14,10 +21,31 @@ background(0);
  
 noFill();
 stroke(255);
-rect(a, a, b, b);
+rect(1, 1, 798, 798);
 
-// får firkanten til at skrumpe med 1 px
-a= a +1;
-b= b -1;
+
+
+fill(255);
+circle(x, y, 25);
+
+x = x + ballXspeed;
+  y = y + ballYspeed;
+
+  if(x == 800) {
+  ballXspeed = ballXspeed += -5;
+ }
+
+ if(y == 800) {
+ ballYspeed = ballYspeed += -5;
+ }
+
+if(x == 0) {
+  ballXspeed = ballXspeed += +5;
+ }
+
+ if(y == 0) {
+ ballYspeed = ballYspeed += +5;
+ }
+
 
 }
